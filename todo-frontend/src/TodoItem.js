@@ -1,10 +1,11 @@
 import React from 'react';
+import './TodoItem.css';
 
 function TodoItem({ todo, deleteTodo }) {
   return (
     <div className="todo-item">
-      <span>{todo.text}</span>
-      <button onClick={() => deleteTodo(todo._id)}>Delete</button>
+      <span className="todo-text">{todo.text}</span>
+      <button onClick={() => deleteTodo(todo._id)} className="delete-button">Delete</button>
     </div>
   );
 }

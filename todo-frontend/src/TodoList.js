@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TodoItem from './TodoItem';
 import TodoForm from './TodoForm';
+import './TodoList.css';
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
@@ -31,11 +32,14 @@ function TodoList() {
   };
 
   return (
-    <div>
+    <div className="todo-list-container">
+      <h1 className="todo-list-title">My Todo List</h1>
       <TodoForm addTodo={addTodo} />
-      {todos.map(todo => (
-        <TodoItem key={todo._id} todo={todo} deleteTodo={deleteTodo} />
-      ))}
+      <div className="todo-items">
+        {todos.map(todo => (
+          <TodoItem key={todo._id} todo={todo} deleteTodo={deleteTodo} />
+        ))}
+      </div>
     </div>
   );
 }
